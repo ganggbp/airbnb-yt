@@ -1,12 +1,15 @@
-import Navbar from "./components/navbar/Navbar";
-import "./globals.css";
-import { Nunito } from "next/font/google";
+import ClientOnly from './components/ClientOnly';
+import RegisterModal from './components/modals/RegisterModal';
+import Navbar from './components/navbar/Navbar';
+import './globals.css';
+import { Nunito } from 'next/font/google';
+import ToasterProvider from './provider/ToasterProvider';
 
-const nunito = Nunito({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Airbnb",
-  description: "Airbnb clone",
+  title: 'Airbnb',
+  description: 'Airbnb clone',
 };
 
 export default function RootLayout({
@@ -17,7 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <Navbar />
+        <ClientOnly>
+          <ToasterProvider />
+          <RegisterModal />
+          <Navbar />
+        </ClientOnly>
         {children}
       </body>
     </html>
