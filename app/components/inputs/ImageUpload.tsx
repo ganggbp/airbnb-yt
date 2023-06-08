@@ -28,14 +28,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
       uploadPreset="zks9hlaw"
       options={{ maxFiles: 1 }}>
       {({ open }) => {
-        function handleOnClick(e) {
-          e.preventDefault();
-          open();
-        }
-
         return (
           <div
-            onClick={handleOnClick}
+            onClick={() => open?.()}
             className="relative cursor-pointer hover:opacity-70 transition border-dashed border-2 p-20 border-neutral-300 flex flex-col justify-center items-center gap-4 text-neutral-600">
             <TbPhotoPlus size={50} />
             <div className="font-semibold text-lg">Click to upload</div>
