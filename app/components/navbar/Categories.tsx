@@ -11,7 +11,7 @@ import {
   GiForestCamp,
   GiIsland,
   GiWindmill,
-} from 'react-icons/Gi';
+} from 'react-icons/gi';
 import { MdOutlineVilla } from 'react-icons/md';
 import { FaSkiing } from 'react-icons/fa';
 import { BsSnow } from 'react-icons/bs';
